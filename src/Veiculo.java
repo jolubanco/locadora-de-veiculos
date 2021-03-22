@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.GregorianCalendar;
 
-
-public class Veiculo {
+public abstract class Veiculo {
 
     private String marca;
     private String placa; //tratar entrada, receber maiusculo e formatado
@@ -23,32 +23,49 @@ public class Veiculo {
         this.valorVeiculo = valorVeiculo;
     }
     //USAR POLIMORFISMO, RECEBENDO UMA CLASSE VEICULO
-    //por enquanto é possivel alugar dentro do mesmo mes
-    public void aluga (int diaFinal, int mesFinal, Cliente cliente){
 
-        Calendar c = Calendar.getInstance();
-        Date diaEHoraInicio = c.getTime();
-        int mesInicio = c.get(Calendar.MONTH);
-        int diaInicio = c.get(Calendar.DAY_OF_MONTH);
+    public void aluga (int numDiarias, Cliente cliente){
+        //melhorar o texto de saida, e salvar a data atual
+        //mostrar a data final
+        GregorianCalendar data = new GregorianCalendar();
+        data.add(Calendar.DAY_OF_MONTH, numDiarias);
+        int diafinal = data.get(Calendar.DAY_OF_MONTH);
+        //Date dataAdicionada = data.getTime(); apresenta a data ADICIONADA mas sem formatar, verifiar como formatar
 
-        //verificar nome da variável
-        //VeiculoAlugado ola = new VeiculoAlugado(this.getPlaca(), dataInicio, dataFinal);
+        //gambiarra, tentar melhorar
+        SimpleDateFormat simpleformat = new SimpleDateFormat("dd/MM/yyyy - HH:mm:ss");
+        String strTimeDay = simpleformat.format(new Date());
 
-        //corrigir ainda
-        //int totalDias = 0;
-
-//        if (mesInicio == mesFinal){
-//            totalDias = diaFinal - diaInicio;
-//        } else {
-//            totalDias =
-//        }
-        int totalDias = diaFinal - diaInicio;
-        double valorAluguelVeiculo = valorVeiculo*0.001;
-        double valorAluguelTotal = valorAluguelVeiculo*(totalDias);
+        double valorAluguelVeiculo = (valorVeiculo*0.001)*(numDiarias);
         System.out.println("O cliente " + cliente.getCpf() + " alugou o carro " + this.getMarca() + " com placa " + this.getPlaca() +
-                " do dia " + diaInicio + " até o dia " + diaFinal + " do mês " +
-                mesFinal + ". Totalizando: R$ " + valorAluguelTotal);
+                 " na data e horário: " + strTimeDay + ". Totalizando: R$ " + valorAluguelVeiculo);
     }
+
+//    public void aluga (int diaFinal, int mesFinal, Cliente cliente){
+//
+//        Calendar c = Calendar.getInstance();
+//        Date diaEHoraInicio = c.getTime();
+//        int mesInicio = c.get(Calendar.MONTH);
+//        int diaInicio = c.get(Calendar.DAY_OF_MONTH);
+//
+//        //verificar nome da variável
+//        //VeiculoAlugado ola = new VeiculoAlugado(this.getPlaca(), dataInicio, dataFinal);
+//
+//        //corrigir ainda
+//        //int totalDias = 0;
+//
+////        if (mesInicio == mesFinal){
+////            totalDias = diaFinal - diaInicio;
+////        } else {
+////            totalDias =
+////        }
+//        int totalDias = Math.abs(diaFinal - diaInicio);
+//        double valorAluguelVeiculo = valorVeiculo*0.001;
+//        double valorAluguelTotal = valorAluguelVeiculo*(totalDias);
+//        System.out.println("O cliente " + cliente.getCpf() + " alugou o carro " + this.getMarca() + " com placa " + this.getPlaca() +
+//                " do dia " + diaInicio + " até o dia " + diaFinal + " do mês " +
+//                mesFinal + ". Totalizando: R$ " + valorAluguelTotal);
+//    }
 
     public static int exibeCarrosDisponiveis(){
         Scanner ler = new Scanner(System.in);

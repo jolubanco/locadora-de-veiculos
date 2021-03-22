@@ -1,18 +1,16 @@
+import java.util.GregorianCalendar;
+
 public class VeiculoAlugado {
-    private String placa;
+    private Veiculo veiculo; //verificar
     private int dataInicio;
     private int dataFinal;
-    private int cpfCliente;
+    private Cliente cliente; //verificar
     private static int total;
 
-    public VeiculoAlugado(String placa, int dataInicio, int dataFinal){
+    public VeiculoAlugado(int dataInicio, int dataFinal){
         total++;
-        this.placa = placa;
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
     }
-
-    public String getPlaca() {
-        return placa;
-    }
 }
+

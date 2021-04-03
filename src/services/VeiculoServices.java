@@ -40,6 +40,8 @@ public class VeiculoServices {
         veiculosAlugados.add(lista);
     }
 
+
+    //REVER, FAZER IGUAL O getVeiculosCadastrados COM MÉTODO toString()
     public void getVeiculosAlugados() {
         for(int i = 0; i < veiculosAlugados.size(); i++){
             System.out.println(veiculosAlugados.get(i));
@@ -49,17 +51,17 @@ public class VeiculoServices {
     //[*] Adiciona a referencia do objeto veiculo
     public void adicionaVeiculo( Veiculo veiculoCadastrado){
         veiculosCadastrados.add(veiculoCadastrado);
-        System.out.println("Veiculo adicionado ao banco de dados com sucesso");
+//        System.out.println("Veiculo adicionado ao banco de dados com sucesso");
     }
 
     public ArrayList<Veiculo> getVeiculosCadastrados() {
         return veiculosCadastrados;
     }
 
-    public void exibeVeiculosCadastrados(){
-        for(int i = 0; i < veiculosCadastrados.size(); i++){
-            System.out.println(veiculosCadastrados.get(i).getMarca());
-        }
-    }
+//    public void exibeVeiculosCadastrados(){
+//        for(int i = 0; i < veiculosCadastrados.size(); i++){
+//            System.out.println(veiculosCadastrados.get(i).getMarca());
+//        }
+//    }
 
 }

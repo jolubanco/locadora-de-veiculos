@@ -84,4 +84,15 @@ public abstract class Veiculo {
 
     public double getValorVeiculo() { return valorVeiculo; }
 
+    @Override
+    public String toString() {
+        return "Veiculo: " +
+                "marca = '" + marca + '\'' +
+                ", placa = '" + placa + '\'' +
+                ", modelo = '" + modelo + '\'' +
+                ", numeroPortas = " + numeroPortas +
+                ", valorVeiculo = " + valorVeiculo +
+                ", cor = '" + cor + '\'' +
+                ", ano = " + ano;
+    }
 }

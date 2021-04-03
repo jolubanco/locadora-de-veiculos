@@ -12,6 +12,10 @@ public class FuncionarioServices {
         listaAcoesFuncionario.add("Cadastrar novo veículo");
         listaAcoesFuncionario.add("Realizar uma locação");
         listaAcoesFuncionario.add("Atualizar veículos");
+        listaAcoesFuncionario.add("Consultar veículos cadastrados");
+        listaAcoesFuncionario.add("Cadastrar novo cliente");
+        listaAcoesFuncionario.add("Consultar clientes cadastrados");
+        listaAcoesFuncionario.add("Atualizar cliente");
 
         System.out.printf("x-------------------------x\n" +
                 "Painel do Funcionário: \n");
@@ -35,6 +39,23 @@ public class FuncionarioServices {
         listaAtualizacao.add("Cor");
         listaAtualizacao.add("Ano");
         listaAtualizacao.add("Número de Portas");
+
+        System.out.printf("Atualizar: \n");
+        int j = listaAtualizacao.size();
+        for (int i=0; i<j; i++) {
+            System.out.printf("%d. %s\n", i+1, listaAtualizacao.get(i));
+        }
+
+        System.out.print("Escolha uma opção: ");
+        return leitor.nextInt();
+    }
+
+    public static int exibeListaAtualizacaoCliente(){
+        Scanner leitor = new Scanner(System.in);
+        ArrayList<String> listaAtualizacao = new ArrayList();
+
+        listaAtualizacao.add("Nome");
+        listaAtualizacao.add("Cpf");
 
         System.out.printf("Atualizar: \n");
         int j = listaAtualizacao.size();

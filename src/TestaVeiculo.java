@@ -36,7 +36,7 @@ public class TestaVeiculo {
         //[*] exibe o numero de veiculos cadastrados
         System.out.println("Veículos Cadastrados: " + Veiculo.getTotalVeiculos());
 
-        veiculoService.exibeVeiculosCadastrados();
+//        veiculoService.exibeVeiculosCadastrados();
 
 
 

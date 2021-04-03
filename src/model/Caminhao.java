@@ -1,3 +1,5 @@
+package model;
+
 public class Caminhao extends Veiculo {
 
     public Caminhao(String marca, String placa, double valorVeiculo){

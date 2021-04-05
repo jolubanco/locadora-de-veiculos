@@ -1,11 +1,12 @@
 import model.*;
 import services.VeiculoServices;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class TestaVeiculo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //[*] instaciando objetos
         Carro vec = new Carro("Ferrari","ABCD-1457", 70000);

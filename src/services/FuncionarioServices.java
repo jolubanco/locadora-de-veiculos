@@ -10,12 +10,15 @@ public class FuncionarioServices {
         ArrayList<String> listaAcoesFuncionario = new ArrayList();
 
         listaAcoesFuncionario.add("Cadastrar novo veículo");
-        listaAcoesFuncionario.add("Realizar uma locação");
         listaAcoesFuncionario.add("Atualizar veículos");
         listaAcoesFuncionario.add("Consultar veículos cadastrados");
         listaAcoesFuncionario.add("Cadastrar novo cliente");
-        listaAcoesFuncionario.add("Consultar clientes cadastrados");
         listaAcoesFuncionario.add("Atualizar cliente");
+        listaAcoesFuncionario.add("Consultar clientes cadastrados");
+        listaAcoesFuncionario.add("Realizar uma locação");
+        listaAcoesFuncionario.add("Consultar veículos alugados");
+        listaAcoesFuncionario.add("Sair");
+
 
         System.out.printf("x-------------------------x\n" +
                 "Painel do Funcionário: \n");

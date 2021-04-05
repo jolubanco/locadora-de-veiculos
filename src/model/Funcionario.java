@@ -3,23 +3,22 @@ package model;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Funcionario {
+public class Funcionario implements Autenticavel{
 
     private String nome;
     private String cpf;
-    private int senha;
+    private AutenticacaoPratica autenticador;
 
-    public boolean autenticaSenha(int senhaFuncionario){
-        if(this.senha == senhaFuncionario){
-            System.out.println("Acesso Permitido!");
-            return true;
-        } else {
-            System.out.println("Acesso Negado!");
-            return false;
-        }
+    public Funcionario(){
+        this.autenticador = new AutenticacaoPratica();
     }
 
     public void setSenha(int senha) {
-        this.senha = senha;
+        this.autenticador.setSenha(senha);
+    }
+
+    @Override
+    public boolean autentica(int senha) {
+        return this.autenticador.autentica(senha);
     }
 }

@@ -59,6 +59,7 @@ public class FuncionarioServices {
 
         listaAtualizacao.add("Nome");
         listaAtualizacao.add("Cpf");
+        listaAtualizacao.add("Status");
 
         System.out.printf("Atualizar: \n");
         int j = listaAtualizacao.size();

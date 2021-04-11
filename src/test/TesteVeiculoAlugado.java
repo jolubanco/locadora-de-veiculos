@@ -1,3 +1,5 @@
+package test;
+
 import model.VeiculoAlugado;
 
 public class TesteVeiculoAlugado {

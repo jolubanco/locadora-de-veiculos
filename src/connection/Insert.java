@@ -13,13 +13,14 @@ public class Insert {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
 
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO cliente (cpf,senha,status) " +
-                "VALUES (?,?,?)", Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO cliente (nome,cpf,senha,status) " +
+                "VALUES (?,?,?,?)");
 
 //        preparedStatement.setString(1, cliente.getNome());
-        preparedStatement.setString(1, cliente.getCpf());
+        preparedStatement.setString(1, cliente.getNome());
         preparedStatement.setString(2, cliente.getCpf());
-        preparedStatement.setBoolean(3, true);
+        preparedStatement.setString(3, cliente.getCpf());
+        preparedStatement.setBoolean(4, true);
         //setando a senha padrão para ser o CPF.
 
         preparedStatement.execute();

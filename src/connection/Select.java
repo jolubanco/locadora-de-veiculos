@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Select {
 
@@ -89,29 +90,70 @@ public class Select {
         connection.close();
     }
 
-//    public void selectClienteCpf(String cpf) throws SQLException {
-//
-//        ConnectionFactory connectionFactory = new ConnectionFactory();
-//        Connection connection = connectionFactory.recuperaConexao();
-//
-//        PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM cliente WHERE cpf = ?");
-//        preparedStatement.setString(1,cpf);
-//        preparedStatement.execute();
-//
-//        ResultSet resultSet = preparedStatement.getResultSet();
-//
-//        while (resultSet.next()){
-//            int id = resultSet.getInt("id");
-//            String nome = resultSet.getString("nome");
-//            String cpf = resultSet.getString("cpf");
-//            boolean status = resultSet.getBoolean("status");
-//
-//            System.out.println("Id: " + id + ", Nome: " + nome + ", Cpf: " + cpf + ", Status: " + status);
-//        }
-//
-//        resultSet.close();
-//        preparedStatement.close();
-//        connection.close();
-//    }
+    public ArrayList selectVeiculoPlaca(String placaInformada) throws SQLException {
+
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        Connection connection = connectionFactory.recuperaConexao();
+
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT marca,valor_veiculo,placa FROM veiculo WHERE placa = ?");
+        preparedStatement.setString(1,placaInformada);
+        preparedStatement.execute();
+
+        ResultSet resultSet = preparedStatement.getResultSet();
+
+        String marca = null;
+        String placa = null;
+        double valor = 0;
+
+        while (resultSet.next()){
+            marca = resultSet.getString("marca");
+            placa = resultSet.getString("placa");
+            valor = resultSet.getDouble("valor_veiculo");
+        }
+
+        ArrayList listaSelecaoVeiculo = new ArrayList();
+        listaSelecaoVeiculo.add(marca);
+        listaSelecaoVeiculo.add(placa);
+        listaSelecaoVeiculo.add(valor);
+
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return listaSelecaoVeiculo;
+
+    }
+
+    public ArrayList selectClienteCpf(String cpfInformado) throws SQLException {
+
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        Connection connection = connectionFactory.recuperaConexao();
+
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT nome,cpf FROM cliente WHERE cpf = ?");
+        preparedStatement.setString(1,cpfInformado);
+        preparedStatement.execute();
+
+        ResultSet resultSet = preparedStatement.getResultSet();
+
+        String nome = null;
+        String cpf = null;
+
+        while (resultSet.next()){
+            nome = resultSet.getString("nome");
+            cpf = resultSet.getString("cpf");
+        }
+
+        ArrayList listaSelecaoVeiculo = new ArrayList();
+        listaSelecaoVeiculo.add(nome);
+        listaSelecaoVeiculo.add(cpf);
+
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return listaSelecaoVeiculo;
+
+    }
+
 
 }

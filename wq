@@ -1,0 +1,47 @@
+[33mcommit f37fc7999ff30e69adf81a7496a1a6555026bcba[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Sun Apr 11 20:31:47 2021 -0300
+
+    primeiro passo para conexão MySQL
+
+[33mcommit 8a82bb9e009e3bac24eadf2eff2bfc4ff37ab856[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Fri Apr 9 16:49:03 2021 -0300
+
+    preparando para conectar com o banco de dados
+
+[33mcommit 91ba53cc6da6fc3a658fc75fca2bd62bc39ecd7a[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Mon Apr 5 14:20:59 2021 -0300
+
+    alterações painel e escrita de veiculos alugados txt
+
+[33mcommit b1f92677bdf2008982086a00b36c3794072e79e4[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Sat Apr 3 18:03:26 2021 -0300
+
+    atualização do painel do funcionário
+
+[33mcommit 56e5a93fdceca62e346f75f1f6503d7e72857aef[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Fri Apr 2 22:49:16 2021 -0300
+
+    definindo as services e acoes do funcionario
+
+[33mcommit 1be3c89f599e1af5fc911062da42b9300427a095[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Mon Mar 22 15:22:17 2021 -0300
+
+    Atualizando README.md
+
+[33mcommit 64f36ecb5dadb0281924784273c583a7fb797c8e[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Mon Mar 22 15:20:30 2021 -0300
+
+    Adicionando README.md
+
+[33mcommit 8735e264320474787c1c988949ccdc207b692a0e[m
+Author: João Lubanco <jolubanco@gmail.com>
+Date:   Sun Mar 21 18:47:55 2021 -0300
+
+    :tada: Primeiro Commit

@@ -7,7 +7,8 @@ import java.util.Date;
 import java.util.Scanner;
 import java.util.GregorianCalendar;
 
-public abstract class Veiculo {
+//voltar a ser abstrata a classe
+public class Veiculo {
 
     private String marca;
     private String placa; //tratar entrada, receber maiusculo e formatado

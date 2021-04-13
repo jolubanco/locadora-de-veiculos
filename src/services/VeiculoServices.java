@@ -4,6 +4,7 @@ import model.Veiculo;
 import model.VeiculoAlugado;
 
 import java.io.*;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -26,10 +27,13 @@ public class VeiculoServices {
         //int diaFinal = data.get(Calendar.DAY_OF_MONTH);
         Date dataFinal = data.getTime();
 
+        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
+        String dataFinalFormatada = dateFormat.format(dataFinal);
+
         double valorAluguelVeiculo = (veiculo.getValorVeiculo()*0.002)*(numDiarias);
 
         System.out.println("Veículo alugado com sucesso! O valor total ficou em R$" + valorAluguelVeiculo
-        + " e a data prevista de devolução é: " + dataFinal);
+        + " e a data prevista de devolução é: " + dataFinalFormatada);
         //formatar a data de saida, para portugues pelo menos!
 
         return new VeiculoAlugado(veiculo,cliente,dataInicio,dataFinal,valorAluguelVeiculo);

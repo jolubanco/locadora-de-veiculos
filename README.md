@@ -1,2 +1,2 @@
-# Desenvolvimento de uma model.Locadora de Carros
+# Desenvolvimento de uma Locadora de Veículos
 ## Este é um projeto em desenvolvimento. Qualquer dúvida ou sugestão é muito bem vinda!!

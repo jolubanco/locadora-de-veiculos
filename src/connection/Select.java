@@ -1,5 +1,8 @@
 package connection;
 
+import model.Cliente;
+import model.Veiculo;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -81,7 +84,7 @@ public class Select {
             double valorLocacao = resultSet.getDouble("valor_locacao");
             boolean statusLocacao = resultSet.getBoolean("status_locacao");
 
-            System.out.println("Placa: " + placa + ", Cpf: " + cpf + ", Data Inicio: " + dataInicio + ", Data Final: " + dataFinal +
+            System.out.println("Placa: " + placa + ", Cpf: " + cpf + ", Inicio: " + dataInicio + ", Final: " + dataFinal +
                     ", Valor Locacao: R$" + valorLocacao + ", Status Locação: " + statusLocacao);
         }
 
@@ -90,7 +93,8 @@ public class Select {
         connection.close();
     }
 
-    public ArrayList selectVeiculoPlaca(String placaInformada) throws SQLException {
+    //estava ArrayList
+    public Veiculo selectVeiculoPlaca(String placaInformada) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -110,21 +114,23 @@ public class Select {
             placa = resultSet.getString("placa");
             valor = resultSet.getDouble("valor_veiculo");
         }
-
-        ArrayList listaSelecaoVeiculo = new ArrayList();
-        listaSelecaoVeiculo.add(marca);
-        listaSelecaoVeiculo.add(placa);
-        listaSelecaoVeiculo.add(valor);
-
         resultSet.close();
         preparedStatement.close();
         connection.close();
+        return new Veiculo(marca,placa,valor);
 
-        return listaSelecaoVeiculo;
+//
+//        ArrayList listaSelecaoVeiculo = new ArrayList();
+//        listaSelecaoVeiculo.add(marca);
+//        listaSelecaoVeiculo.add(placa);
+//        listaSelecaoVeiculo.add(valor);
+
+
+       // return listaSelecaoVeiculo;
 
     }
-
-    public ArrayList selectClienteCpf(String cpfInformado) throws SQLException {
+    //estava ArrayList
+    public Cliente selectClienteCpf(String cpfInformado) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -143,16 +149,15 @@ public class Select {
             cpf = resultSet.getString("cpf");
         }
 
-        ArrayList listaSelecaoVeiculo = new ArrayList();
-        listaSelecaoVeiculo.add(nome);
-        listaSelecaoVeiculo.add(cpf);
-
         resultSet.close();
         preparedStatement.close();
         connection.close();
 
-        return listaSelecaoVeiculo;
+        return new Cliente(nome,cpf);
 
+        //ArrayList listaSelecaoVeiculo = new ArrayList();
+//        listaSelecaoVeiculo.add(nome);
+//        listaSelecaoVeiculo.add(cpf);
     }
 
 

@@ -25,3 +25,14 @@ VeiculoAlugado: Placa do veiculo = WQR-3456, Cpf do cliente = 08326702943, dataI
 VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = 08326702943, dataInicio = Tue Apr 13 16:49:41 BRT 2021, dataFinal = Thu Apr 15 16:49:41 BRT 2021, valorLocacao = 600.0, statusLocacao = true
 VeiculoAlugado: Placa do veiculo = WQR-3456, Cpf do cliente = 2114718596, dataInicio = Tue Apr 13 16:51:07 BRT 2021, dataFinal = Fri Apr 16 16:51:07 BRT 2021, valorLocacao = 1200.0, statusLocacao = true
 VeiculoAlugado: Placa do veiculo = IOP-1111, Cpf do cliente = 1025879698, dataInicio = Tue Apr 13 17:01:33 BRT 2021, dataFinal = Tue Apr 27 17:01:33 BRT 2021, valorLocacao = 980.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = WQR-3456, Cpf do cliente = 6947822, dataInicio = Tue Apr 13 22:25:07 BRT 2021, dataFinal = Mon Apr 19 22:25:07 BRT 2021, valorLocacao = 2400.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = IOP-1111, Cpf do cliente = 5263968574, dataInicio = Tue Apr 13 22:48:22 BRT 2021, dataFinal = Fri Apr 30 22:48:22 BRT 2021, valorLocacao = 1190.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = 1025879698, dataInicio = 13-04-2021 10:52:57, dataFinal = 14-04-2021 10:52:57, valorLocacao = 300.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = 08326702943, dataInicio = 13-04-2021 10:55:24, dataFinal = 16-04-2021 10:55:24, valorLocacao = 900.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = IOP-1111, Cpf do cliente = 08326702943, dataInicio = 13-04-2021 10:59:11, dataFinal = 15-04-2021 10:59:11, valorLocacao = 140.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = WQR-3456, Cpf do cliente = 1025879698, dataInicio = 14-04-2021 10:37:58, dataFinal = 20-04-2021 10:37:58, valorLocacao = 2400.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = 08326702943, dataInicio = 14-04-2021 10:49:01, dataFinal = 16-04-2021 10:49:01, valorLocacao = 600.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = 10125252525, dataInicio = 14-04-2021 10:57:00, dataFinal = 19-04-2021 10:57:00, valorLocacao = 1500.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = 08326702943, dataInicio = 14-04-2021 10:59:58, dataFinal = 16-04-2021 10:59:58, valorLocacao = 600.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = ABA-1052, Cpf do cliente = null, dataInicio = 14-04-2021 11:02:10, dataFinal = 29-04-2021 11:02:10, valorLocacao = 4500.0, statusLocacao = true
+VeiculoAlugado: Placa do veiculo = AAF-5876, Cpf do cliente = null, dataInicio = 14-04-2021 11:07:46, dataFinal = 29-04-2021 11:07:46, valorLocacao = 900.0, statusLocacao = true

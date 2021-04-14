@@ -6,6 +6,8 @@ import model.VeiculoAlugado;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Insert {
 
@@ -37,18 +39,27 @@ public class Insert {
                 "VALUES (?,?,?,?,?,?)");
 
         //FEITO PORCAMENTE, CORRIGIR
-        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
-        //corrigr o mês, não esta certo, pois está vindo como string e convertendo
-        String dataInicioString = dateFormat.format(veiculoAlugado.getDataInicio());
-        String dataFinalString = dateFormat.format(veiculoAlugado.getDataFinal());
+//        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+//        String dataInicioString = dateFormat.format(veiculoAlugado.getDataInicio()); //aqui
+//        String dataFinalString = dateFormat.format(veiculoAlugado.getDataFinal());
+
+//        DateTimeFormatter monthFormatter = DateTimeFormatter.ofPattern("dd/MM/uuuu");
+//        String dataInicio = veiculoAlugado.getDataInicio();
+//        OffsetDateTime dateTime = OffsetDateTime.parse(dataInicio);
+//        String dataInicioFormatada = dateTime.format(monthFormatter);
+//
+//        String dataFinal = veiculoAlugado.getDataFinal();
+//        OffsetDateTime dateTime2 = OffsetDateTime.parse(dataFinal);
+//        String dataFinalFormatada = dateTime2.format(monthFormatter);
+
+
 
         preparedStatement.setString(1, veiculoAlugado.getVeiculo().getPlaca());
         preparedStatement.setString(2, veiculoAlugado.getCliente().getCpf());
-        preparedStatement.setString(3, dataInicioString);
-        preparedStatement.setString(4, dataFinalString);
+        preparedStatement.setString(3, veiculoAlugado.getDataInicio());
+        preparedStatement.setString(4, veiculoAlugado.getDataFinal());
         preparedStatement.setDouble(5, veiculoAlugado.getValorLocacao());
         preparedStatement.setBoolean(6, true);
-
 
         preparedStatement.execute();
         preparedStatement.close();
@@ -60,8 +71,7 @@ public class Insert {
         Connection connection = connectionFactory.recuperaConexao();
 
         PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO veiculo " +
-                "(marca, placa, valor_veiculo,tipo_veiculo) " +
-                "VALUES (?,?,?,?)");
+                "(marca, placa, valor_veiculo,tipo_veiculo) VALUES (?,?,?,?)");
 
 //        preparedStatement.setString(1, cliente.getNome());
         preparedStatement.setString(1, veiculo.getMarca());

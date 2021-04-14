@@ -39,7 +39,7 @@ public class Update {
 
     }
 
-    public void atualizarVeiculo(String placaVeiculo, String variavelAtualizada, int opcaoAtualizacao) throws SQLException {
+    public void atualizarVeiculo(String placaVeiculo, Object variavelAtualizada, int opcaoAtualizacao) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -50,7 +50,7 @@ public class Update {
             case 1:
                 PreparedStatement preparedStatement1 = connection.prepareStatement("UPDATE veiculo SET marca = ? WHERE placa = ?");
 
-                preparedStatement1.setString(1, variavelAtualizada);
+                preparedStatement1.setString(1, (String) variavelAtualizada);
                 preparedStatement1.setString(2, placaVeiculo);
 
                 preparedStatement1.execute();
@@ -60,7 +60,7 @@ public class Update {
             case 2:
                 PreparedStatement preparedStatement2 = connection.prepareStatement("UPDATE veiculo SET placa = ? WHERE placa = ?");
 
-                preparedStatement2.setString(1, variavelAtualizada);
+                preparedStatement2.setString(1, (String) variavelAtualizada);
                 preparedStatement2.setString(2, placaVeiculo);
 
                 preparedStatement2.execute();
@@ -70,7 +70,7 @@ public class Update {
             case 3:
                 PreparedStatement preparedStatement3 = connection.prepareStatement("UPDATE veiculo SET modelo = ? WHERE placa = ?");
 
-                preparedStatement3.setString(1, variavelAtualizada);
+                preparedStatement3.setString(1, (String) variavelAtualizada);
                 preparedStatement3.setString(2, placaVeiculo);
 
                 preparedStatement3.execute();
@@ -80,7 +80,7 @@ public class Update {
             case 4:
                 PreparedStatement preparedStatement4 = connection.prepareStatement("UPDATE veiculo SET valor_veiculo = ? WHERE placa = ?");
 
-                preparedStatement4.setString(1, variavelAtualizada);
+                preparedStatement4.setDouble(1, (double) variavelAtualizada);
                 preparedStatement4.setString(2, placaVeiculo);
 
                 preparedStatement4.execute();
@@ -90,7 +90,7 @@ public class Update {
             case 5:
                 PreparedStatement preparedStatement5 = connection.prepareStatement("UPDATE veiculo SET cor = ? WHERE placa = ?");
 
-                preparedStatement5.setString(1, variavelAtualizada);
+                preparedStatement5.setString(1, (String) variavelAtualizada);
                 preparedStatement5.setString(2, placaVeiculo);
 
                 preparedStatement5.execute();
@@ -100,7 +100,7 @@ public class Update {
             case 6:
                 PreparedStatement preparedStatement6 = connection.prepareStatement("UPDATE veiculo SET ano = ? WHERE placa = ?");
 
-                preparedStatement6.setString(1, variavelAtualizada);
+                preparedStatement6.setInt(1,(int) variavelAtualizada);
                 preparedStatement6.setString(2, placaVeiculo);
 
                 preparedStatement6.execute();
@@ -110,7 +110,7 @@ public class Update {
             case 7:
                 PreparedStatement preparedStatement7 = connection.prepareStatement("UPDATE veiculo SET numero_portas = ? WHERE placa = ?");
 
-                preparedStatement7.setString(1, variavelAtualizada);
+                preparedStatement7.setInt(1,(int) variavelAtualizada);
                 preparedStatement7.setString(2, placaVeiculo);
 
                 preparedStatement7.execute();

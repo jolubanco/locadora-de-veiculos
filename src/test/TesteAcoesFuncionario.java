@@ -27,20 +27,21 @@ public class TesteAcoesFuncionario {
         Delete delete = new Delete();
         Select select = new Select();
         Update update = new Update();
+        //
 
         //APENAS PARA TESTE
-        Carro veiculoteste1 = new Carro("Peugeot", "ABCD-1010", 15000);
-        Carro veiculoteste2 = new Carro("Ford", "EFGH-0101", 30000);
-        Carro veiculoteste3 = new Carro("Ferrari", "IUPI-5255", 1000000);
-        Cliente clienteteste1 = new Cliente("guilherme","08326702943");
-        Cliente clienteteste2 = new Cliente("Joaquim","10255889699");
-        Cliente clienteteste3 = new Cliente("Douglas","101010101010");
-        clienteServices.adicionaCliente(clienteteste1);
-        clienteServices.adicionaCliente(clienteteste2);
-        clienteServices.adicionaCliente(clienteteste3);
-        veiculoServices.adicionaVeiculo(veiculoteste1);
-        veiculoServices.adicionaVeiculo(veiculoteste2);
-        veiculoServices.adicionaVeiculo(veiculoteste3);
+//        Carro veiculoteste1 = new Carro("Peugeot", "ABCD-1010", 15000);
+//        Carro veiculoteste2 = new Carro("Ford", "EFGH-0101", 30000);
+//        Carro veiculoteste3 = new Carro("Ferrari", "IUPI-5255", 1000000);
+//        Cliente clienteteste1 = new Cliente("guilherme","08326702943");
+//        Cliente clienteteste2 = new Cliente("Joaquim","10255889699");
+//        Cliente clienteteste3 = new Cliente("Douglas","101010101010");
+//        clienteServices.adicionaCliente(clienteteste1);
+//        clienteServices.adicionaCliente(clienteteste2);
+//        clienteServices.adicionaCliente(clienteteste3);
+//        veiculoServices.adicionaVeiculo(veiculoteste1);
+//        veiculoServices.adicionaVeiculo(veiculoteste2);
+//        veiculoServices.adicionaVeiculo(veiculoteste3);
 
         boolean condicao = true;
 
@@ -108,7 +109,7 @@ public class TesteAcoesFuncionario {
                                         System.out.print("Insira o valor atualizado: ");
                                         double valorAtualizada = leitor.nextDouble();
                                         //veiculoServices.getVeiculosCadastrados().get(posicaoVeiculo).setValorVeiculo(valorAtualizada);
-                                        //update.atualizarVeiculo(placaVeiculo,valorAtualizada,4);
+                                        update.atualizarVeiculo(placaVeiculo,valorAtualizada,4);
                                         System.out.println("Atualização realizada com sucesso!");
                                         break;
                                     case 5:
@@ -122,14 +123,14 @@ public class TesteAcoesFuncionario {
                                         System.out.print("Insira o ano atualizado: ");
                                         int anoAtualizada = leitor.nextInt();
                                         //veiculoServices.getVeiculosCadastrados().get(posicaoVeiculo).setAno(anoAtualizada);
-                                        //update.atualizarVeiculo(placaVeiculo,anoAtualizada,6);
+                                        update.atualizarVeiculo(placaVeiculo,anoAtualizada,6);
                                         System.out.println("Atualização realizada com sucesso!");
                                         break;
                                     case 7:
                                         System.out.print("Insira numero de portas atualizado: ");
                                         int numPortaAtualizada = leitor.nextInt();
                                         //veiculoServices.getVeiculosCadastrados().get(posicaoVeiculo).setNumeroPortas(numPortaAtualizada);
-                                        //update.atualizarVeiculo(placaVeiculo,numPortaAtualizada,7);
+                                        update.atualizarVeiculo(placaVeiculo,numPortaAtualizada,7);
                                         System.out.println("Atualização realizada com sucesso!");
                                         break;
 
@@ -231,23 +232,30 @@ public class TesteAcoesFuncionario {
 //                                }
                                 //
 
+                                //PERGUNTAR MARCELO COMO DEIXAR, ARRAYLIST OU OBJECT
+
                                 //[*] Recuperando os dados do Cliente
-                                ArrayList listaAtributosCliente = select.selectClienteCpf(cpfClienteEscolhido);
-                                String nomeClienteRecuperado = (String) listaAtributosCliente.get(0);
-                                String cpfClienteRecuperada = (String) listaAtributosCliente.get(1);
+//                                ArrayList listaAtributosCliente = select.selectClienteCpf(cpfClienteEscolhido);
+//                                String nomeClienteRecuperado = (String) listaAtributosCliente.get(0);
+//                                String cpfClienteRecuperada = (String) listaAtributosCliente.get(1);
+//                                //
+//
+//                                //[*] Recuperando os dados do Veículo
+//                                ArrayList listaAtributosVeiculo = select.selectVeiculoPlaca(placaVeiculoAlugarEscolhido);
+//                                String marcaVeiculoRecuperada = (String) listaAtributosVeiculo.get(0);
+//                                String placaVeiculoRecuperada = (String) listaAtributosVeiculo.get(1);
+//                                double valorVeiculoRecuperado = (double) listaAtributosVeiculo.get(2);
                                 //
 
-                                //[*] Recuperando os dados do Veículo
-                                ArrayList listaAtributosVeiculo = select.selectVeiculoPlaca(placaVeiculoAlugarEscolhido);
-                                String marcaVeiculoRecuperada = (String) listaAtributosVeiculo.get(0);
-                                String placaVeiculoRecuperada = (String) listaAtributosVeiculo.get(1);
-                                double valorVeiculoRecuperado = (double) listaAtributosVeiculo.get(2);
-                                //
+                                Cliente clienteRecebidoConsulta = select.selectClienteCpf(cpfClienteEscolhido);
+                                Veiculo veiculoRecebidoConsulta = select.selectVeiculoPlaca(placaVeiculoAlugarEscolhido);
 
-                                Veiculo recriandoVeiculoEscolhido = new Veiculo(marcaVeiculoRecuperada,placaVeiculoRecuperada,valorVeiculoRecuperado);
-                                Cliente recriandoClienteEscolhido = new Cliente(nomeClienteRecuperado,cpfClienteRecuperada);
 
-                                VeiculoAlugado veiculoAlugado = veiculoServices.alugaVeiculo(numeroDiarias,recriandoClienteEscolhido,recriandoVeiculoEscolhido);
+//                                Veiculo recriandoVeiculoEscolhido = new Veiculo(marcaVeiculoRecuperada,placaVeiculoRecuperada,valorVeiculoRecuperado);
+//                                Cliente recriandoClienteEscolhido = new Cliente(nomeClienteRecuperado,cpfClienteRecuperada);
+
+//                                VeiculoAlugado veiculoAlugado = veiculoServices.alugaVeiculo(numeroDiarias,recriandoClienteEscolhido,recriandoVeiculoEscolhido);
+                                VeiculoAlugado veiculoAlugado = veiculoServices.alugaVeiculo(numeroDiarias,clienteRecebidoConsulta,veiculoRecebidoConsulta);
                                 veiculoServices.adicionaVeiculoAlugado(veiculoAlugado);
 
 

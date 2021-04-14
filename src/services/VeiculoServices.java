@@ -27,16 +27,18 @@ public class VeiculoServices {
         //int diaFinal = data.get(Calendar.DAY_OF_MONTH);
         Date dataFinal = data.getTime();
 
-        DateFormat dateFormat = new SimpleDateFormat("dd-mm-yyyy hh:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+        //ESTA É A FORMATAÇÃO CORRETA, PASSAR COMO PARAMETRO PARA O OBJETO VeiculoAlugado
+        String dataIniciolFormatada = dateFormat.format(dataInicio);
         String dataFinalFormatada = dateFormat.format(dataFinal);
+
 
         double valorAluguelVeiculo = (veiculo.getValorVeiculo()*0.002)*(numDiarias);
 
         System.out.println("Veículo alugado com sucesso! O valor total ficou em R$" + valorAluguelVeiculo
-        + " e a data prevista de devolução é: " + dataFinalFormatada);
-        //formatar a data de saida, para portugues pelo menos!
+        + " e a data prevista de devolução é: " + dataFinalFormatada); //AQUI A DATA ESTÁ CORRETA
 
-        return new VeiculoAlugado(veiculo,cliente,dataInicio,dataFinal,valorAluguelVeiculo);
+        return new VeiculoAlugado(veiculo,cliente,dataIniciolFormatada,dataFinalFormatada,valorAluguelVeiculo);
     }
 
     public void adicionaVeiculoAlugado( VeiculoAlugado veiculoAlugado) throws IOException {

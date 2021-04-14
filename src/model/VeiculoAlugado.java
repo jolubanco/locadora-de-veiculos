@@ -6,13 +6,13 @@ public class VeiculoAlugado {
 
     private Veiculo veiculo; //verificar
     private Cliente cliente; //verificar
-    private Date dataInicio;
-    private Date dataFinal;
+    private String dataInicio;
+    private String dataFinal;
     private double valorLocacao;
     private boolean statusLocacao;
     private static int total;
 
-    public VeiculoAlugado(Veiculo veiculo, Cliente cliente, Date dataInicio, Date dataFinal, double valorLocacao){
+    public VeiculoAlugado(Veiculo veiculo, Cliente cliente, String dataInicio, String dataFinal, double valorLocacao){
         this.veiculo = veiculo;
         this.cliente = cliente;
         this.dataInicio = dataInicio;
@@ -38,19 +38,19 @@ public class VeiculoAlugado {
         this.cliente = cliente;
     }
 
-    public Date getDataInicio() {
+    public String getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public Date getDataFinal() {
+    public String getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(Date dataFinal) {
+    public void setDataFinal(String dataFinal) {
         this.dataFinal = dataFinal;
     }
 

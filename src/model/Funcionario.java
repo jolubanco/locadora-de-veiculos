@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,18 +8,32 @@ public class Funcionario implements Autenticavel{
 
     private String nome;
     private String cpf;
-    private AutenticacaoPratica autenticador;
+    private String userName; //tratar o username para que não exista dois iguais
+    private AutenticacaoPratica autenticador = new AutenticacaoPratica();
 
+    //ta estranho
     public Funcionario(){
-        this.autenticador = new AutenticacaoPratica();
     }
 
-    public void setSenha(int senha) {
+    public Funcionario(String nome, String cpf, String userName) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.userName = userName;
+//        this.autenticador = new AutenticacaoPratica();
+//        setSenha(cpf);
+    }
+
+    @Override
+    public void setSenha(String senha) {
         this.autenticador.setSenha(senha);
     }
 
     @Override
-    public boolean autentica(int senha) {
-        return this.autenticador.autentica(senha);
+    public boolean autentica(String userName,String senha) throws SQLException {
+        return this.autenticador.autentica(userName,senha);
+    }
+
+    public String getNome() {
+        return nome;
     }
 }

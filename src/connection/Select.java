@@ -7,8 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.*;
-import java.util.ArrayList;
+
 
 public class Select {
 
@@ -93,7 +92,6 @@ public class Select {
         connection.close();
     }
 
-    //estava ArrayList
     public Veiculo selectVeiculoPlaca(String placaInformada) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -129,7 +127,7 @@ public class Select {
        // return listaSelecaoVeiculo;
 
     }
-    //estava ArrayList
+
     public Cliente selectClienteCpf(String cpfInformado) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -155,10 +153,32 @@ public class Select {
 
         return new Cliente(nome,cpf);
 
-        //ArrayList listaSelecaoVeiculo = new ArrayList();
-//        listaSelecaoVeiculo.add(nome);
-//        listaSelecaoVeiculo.add(cpf);
     }
 
+    //adicionar excessão pois quando não existe o funcionario no banco da erro
+    public String selectLoginFuncionario(String userName) throws SQLException {
 
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        Connection connection = connectionFactory.recuperaConexao();
+
+        PreparedStatement preparedStatement = connection.prepareStatement("SELECT nome,senha FROM funcionario WHERE username = ?");
+        preparedStatement.setString(1,userName);
+        preparedStatement.execute();
+
+        ResultSet resultSet = preparedStatement.getResultSet();
+
+//        String nome = null;
+        String senha = null;
+
+        while (resultSet.next()){
+//            nome = resultSet.getString("nome");
+            senha = resultSet.getString("senha");
+        }
+
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
+
+        return senha;
+    }
 }

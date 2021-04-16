@@ -1,6 +1,7 @@
-package test;
-
-import connection.*;
+import connection.Delete;
+import connection.Insert;
+import connection.Select;
+import connection.Update;
 import model.*;
 import services.ClienteServices;
 import services.FuncionarioServices;
@@ -8,18 +9,25 @@ import services.VeiculoServices;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TesteAcoesFuncionario {
+public class MovidaApplication {
 
     public static void main(String[] args) throws IOException, SQLException {
 
         //PRÉ-DEFINICOES
         VeiculoServices veiculoServices = new VeiculoServices();
         ClienteServices clienteServices = new ClienteServices();
-        Funcionario funcionario = new Funcionario();
-        funcionario.setSenha(2021);
+        Funcionario funcionario = new Funcionario(); //instanciando para utilizar no login
+        //estranho instanciar o funcionario
+
+
+        //senha do funcionário foi setada como o cpf
+        //funcionario.setSenha(2021);
+//        Atendente atendente = new Atendente("João","71426702943","joao943");
+//        atendente.setSenha("1010");
+//        Gerente gerente = new Gerente("Carlos","08326989698","carlos698");
+//        gerente.setSenha("1234");
         ////
 
         //PRÉ-DEFINICOES - BANCO DE DADOS
@@ -46,11 +54,13 @@ public class TesteAcoesFuncionario {
         boolean condicao = true;
 
         while(true){
-            Scanner leitorSenhaFuncionario = new Scanner(System.in);
-            System.out.print("Informe sua senha: ");
-            int senhaSolicitada = leitorSenhaFuncionario.nextInt();
+            Scanner leitorLogin = new Scanner(System.in);
+            System.out.print("Usuário: ");
+            String userNameSolicitado = leitorLogin.nextLine();
+            System.out.print("Senha: ");
+            String senhaSolicitada = leitorLogin.nextLine();
 
-                if (funcionario.autentica(senhaSolicitada)){
+                if (funcionario.autentica(userNameSolicitado,senhaSolicitada)){
                     condicao = true;
                     while (condicao) {
                         Scanner leitor = new Scanner(System.in);
@@ -282,5 +292,3 @@ public class TesteAcoesFuncionario {
 }
 
 }
-
-

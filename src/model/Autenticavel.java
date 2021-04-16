@@ -1,8 +1,10 @@
 package model;
 
+import java.sql.SQLException;
+
 public interface Autenticavel {
 
-    public abstract void setSenha(int senha);
+    public abstract void setSenha(String senha);
 
-    public abstract boolean autentica(int senha);
+    public abstract boolean autentica(String username,String senha) throws SQLException;
 }

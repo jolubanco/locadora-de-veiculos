@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.SQLException;
+
 public class Cliente implements Autenticavel{
 
     private String nome;
@@ -40,13 +42,13 @@ public class Cliente implements Autenticavel{
 
     //ainda nao existem implementação para o cliente utilizar a senha!
     @Override
-    public void setSenha(int senha) {
+    public void setSenha(String senha) {
         this.autenticador.setSenha(senha);
     }
 
     @Override
-    public boolean autentica(int senha) {
-        return autenticador.autentica(senha);
+    public boolean autentica(String userName,String senha) throws SQLException {
+        return autenticador.autentica(userName,senha);
     }
 }
 

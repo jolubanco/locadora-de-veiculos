@@ -10,7 +10,7 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Insert {
-
+    //ok
     public void insertCliente(Cliente cliente) throws SQLException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -29,7 +29,7 @@ public class Insert {
         preparedStatement.close();
         connection.close();
     }
-
+    //ok
     public void insertVeiculoAlugado(VeiculoAlugado veiculoAlugado) throws SQLException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -65,7 +65,7 @@ public class Insert {
         preparedStatement.close();
         connection.close();
     }
-
+    //ok
     public void insertVeiculo(Veiculo veiculo, String tipoVeiculo) throws SQLException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();

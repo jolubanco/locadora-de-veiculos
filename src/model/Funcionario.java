@@ -1,15 +1,13 @@
 package model;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Funcionario implements Autenticavel{
 
     private String nome;
     private String cpf;
     private String userName; //tratar o username para que não exista dois iguais
-    private AutenticacaoPratica autenticador = new AutenticacaoPratica();
+    private Autenticacao autenticador = new Autenticacao();
 
     //ta estranho
     public Funcionario(){

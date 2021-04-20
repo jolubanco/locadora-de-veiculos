@@ -6,10 +6,10 @@ public class Cliente implements Autenticavel{
 
     private String nome;
     private String cpf;
-    private AutenticacaoPratica autenticador;
+    private Autenticacao autenticador;
 
     public Cliente(){
-        this.autenticador = new AutenticacaoPratica();
+        this.autenticador = new Autenticacao();
     }
 
     public Cliente(String nome, String cpf){

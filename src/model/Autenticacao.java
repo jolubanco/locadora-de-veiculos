@@ -4,7 +4,7 @@ import connection.Select;
 
 import java.sql.SQLException;
 
-public class AutenticacaoPratica {
+public class Autenticacao {
 
     private String senha;
     //fazer a conexão com o banco

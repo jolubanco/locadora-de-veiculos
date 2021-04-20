@@ -6,6 +6,7 @@ import java.sql.*;
 
 public class Update {
 
+    //ok
     public void atualizaCliente(String cpfCliente, String variavelAtualizada, int opcaoAtualizacao) throws SQLException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -39,6 +40,7 @@ public class Update {
 
     }
 
+    //ok
     public void atualizarVeiculo(String placaVeiculo, Object variavelAtualizada, int opcaoAtualizacao) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();

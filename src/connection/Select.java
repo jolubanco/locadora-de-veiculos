@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 
 public class Select {
-
+    //ok
     public void selectVeiculo() throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -42,6 +42,7 @@ public class Select {
         connection.close();
     }
 
+    //ok
     public void selectCliente() throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -66,6 +67,7 @@ public class Select {
         connection.close();
     }
 
+    //ok
     public void selectVeiculoAlugado() throws SQLException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         Connection connection = connectionFactory.recuperaConexao();
@@ -92,6 +94,7 @@ public class Select {
         connection.close();
     }
 
+    //ok
     public Veiculo selectVeiculoPlaca(String placaInformada) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -128,6 +131,7 @@ public class Select {
 
     }
 
+    //ok
     public Cliente selectClienteCpf(String cpfInformado) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -156,6 +160,7 @@ public class Select {
     }
 
     //adicionar excessão pois quando não existe o funcionario no banco da erro
+    //ok
     public String selectLoginFuncionario(String userName) throws SQLException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();

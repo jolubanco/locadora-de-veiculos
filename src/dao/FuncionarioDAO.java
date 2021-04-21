@@ -15,7 +15,7 @@ public class FuncionarioDAO {
         this.connection = connection;
     }
 
-    public String selectLoginFuncionario(String userName) throws SQLException {
+    public String selectSenha(String userName) throws SQLException {
 
         String sql = "SELECT nome,senha FROM funcionario WHERE username = ?";
         String nome = null;
